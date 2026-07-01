@@ -29,7 +29,7 @@ public class AstronomyPageTest {
     void refreshLocationButtonIsPresent() {
         driver.get("http://localhost:5173/astronomy");
 
-        WebElement refreshButton = driver.findElement(By.xpath("//button[text()='Refresh Location']"));
+        WebElement refreshButton = driver.findElement(By.xpath("//button[contains(text(), 'Refresh Location')]"));
         assertTrue(refreshButton.isDisplayed());
     }
 

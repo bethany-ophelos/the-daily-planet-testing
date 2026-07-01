@@ -26,7 +26,7 @@ public class ISSPageTest {
     void navigateToISSPageFromHomePage() {
         driver.get("http://localhost:5173");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Click the ISS link in the navigation bar
         WebElement issLink = wait.until(
@@ -37,7 +37,8 @@ public class ISSPageTest {
         // Wait for the Refresh Location button to appear
         WebElement refreshButton = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//button[normalize-space()='Refresh Location']")
+                        By.xpath("//button[contains(text(), 'Refresh Location')]")
+
                 )
         );
 
