@@ -40,7 +40,9 @@ public class HomePageTest {
     void saveToFavouritesButtonIsPresent() {
         driver.get("http://localhost:5173/");
 
-        WebElement favouriteButton = driver.findElement(By.cssSelector("button[data-testid='favourite-button']"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement favouriteButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("button[data-testid='favourite-button']")));
         assertTrue(favouriteButton.isDisplayed());
     }
 
